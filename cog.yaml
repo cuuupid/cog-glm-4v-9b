@@ -1,0 +1,15 @@
+build:
+  gpu: true
+  python_packages:
+    - Pillow==10.1.0
+    - torch==2.1.2
+    - torchvision==0.16.2
+    - transformers==4.40.0
+    - sentencepiece==0.1.99
+    - tiktoken
+    - accelerate
+  python_version: "3.11"
+  run:
+    - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/latest/download/pget_$(uname -s)_$(uname -m)"
+    - chmod +x /usr/local/bin/pget
+predict: predict.py:Predictor
